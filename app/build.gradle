@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "com.hhgs.tcw"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //自动轮播
+    compile('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2') {
+        exclude module: 'support-v4'
+    }
+    compile project(':library')
+    //likebutton of twitter
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.ashokvarma.android:bottom-navigation-bar:1.2.0'
+    compile 'com.facebook.fresco:fresco:0.12.0'
+    compile 'de.hdodenhof:circleimageview:2.0.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.github.jd-alexander:LikeButton:0.2.0'
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:support-vector-drawable:24.2.1'
+    testCompile 'junit:junit:4.12'
+    compile files('src/main/java/com/hhgs/tcw/lib/pinyin4j-2.5.0.jar')
+    compile files('libs/jpush-android_v3.0.1.jar')
+    compile files('libs/jcore-android_v1.1.0.jar')
+    compile files('src/main/java/com/hhgs/tcw/lib/badgeview.jar')
+    compile 'me.leolin:ShortcutBadger:1.1.10@aar'
+    compile files('src/main/java/com/hhgs/tcw/lib/xUtils-2.6.2.jar')
+    compile 'com.camnter.easyslidingtabs:easyslidingtabs:1.0'
+    compile 'me.yokeyword:fragmentation:0.9.5'
+    compile 'org.greenrobot:eventbus:3.0.0'
+}

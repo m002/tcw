@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/home_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <include
+            android:id="@+id/tittlebar"
+            layout="@layout/tittle_bar" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="8dp"
+                android:drawableRight="@drawable/btn_choose_city_normal"
+                android:gravity="center"
+                android:maxLength="4"
+                android:singleLine="true"
+                android:text="西宁市"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/home_location_textsize" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/searchedittext"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/tittle_edittext_bg"
+            android:drawableLeft="@drawable/discover"
+            android:elevation="8dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="8dp"
+            android:paddingRight="4dp"
+            android:paddingTop="2dp"
+            android:textColor="@color/colorSecondaryText" />
+
+
+        <LinearLayout
+            android:id="@+id/message_lin"
+            android:layout_width="44dp"
+            android:layout_height="38dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            android:elevation="8dp"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/message_img"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:elevation="8dp"
+                android:src="@drawable/message" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <com.hhgs.tcw.View.SwipLayout
+        android:id="@+id/my_swip"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.hhgs.tcw.View.XListView
+            android:id="@+id/home_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000" />
+
+        <!--<ListView-->
+        <!--android:id="@+id/lv_information"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:divider="@color/backgroundgrey"-->
+        <!--android:dividerHeight="4px">-->
+
+        <!--</ListView>-->
+
+    </com.hhgs.tcw.View.SwipLayout>
+
+</LinearLayout>
